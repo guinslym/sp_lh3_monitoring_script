@@ -13,6 +13,7 @@ xlrd = "^1.2.0"
 openpyxl = "^3.0.3"
 pandas = "^0.25.3"
 tinydb = "^3.15.2"
+ask_schools = "^0.2.9"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

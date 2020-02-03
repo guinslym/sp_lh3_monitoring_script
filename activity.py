@@ -153,7 +153,7 @@ def find_assignements(assignments, user):
                 'hour_floor': str(loc_dt.strftime(fmt_hour))[0:2],
                 'hour': str(loc_dt.strftime(fmt_hour))
             }
-            print(value)
+            #print(value)
             availabilities.append(value)
     return [staffing, availabilities]
 

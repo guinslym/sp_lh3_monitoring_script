@@ -77,3 +77,18 @@
    77  cd sp_lh3_monitoring_script/
    78  ls
    79  history > history.txt
+   80  head history.txt 
+   81  ls
+   82  poetry run python activity.py 
+   83  git st
+   84  git status
+   85  git commit -am 'history'
+   86  git push -u origin master
+   87  git pull
+   88  git st
+   89  git status
+   90  git config --global alias.st status
+   91  git config --global alias.co checkout
+   92  git config --global alias.ci commit
+   93  git config --global alias.br branch
+   94  history > history.txt

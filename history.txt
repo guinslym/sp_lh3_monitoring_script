@@ -92,3 +92,87 @@
    92  git config --global alias.ci commit
    93  git config --global alias.br branch
    94  history > history.txt
+   95  git st
+   96  git ci -am 'history'
+   97  git push -u origin master
+   98  ls
+   99  poetry run python activity.py 
+  100  ls
+  101  poetry run ask.py 
+  102  poetry run python  ask.py 
+  103  crontab -e
+  104  pwd
+  105  crontab -e
+  106  ls
+  107  rm *.xlsx
+  108  ls
+  109  export environment=PROD
+  110  $environment
+  111  vim ~/.bashrc 
+  112  source ~/.bashrc
+  113  $environment
+  114  ls
+  115  set
+  116  echo "$environment"
+  117  pwd
+  118  ls
+  119  git pull
+  120  ls
+  121  cd ..
+  122  poetry run python sp_lh3_monitoring_script/activity.py 
+  123  cd ..
+  124  ls
+  125  cd -
+  126  ls
+  127  cd sp_lh3_monitoring_script/
+  128  ls
+  129  cat pyproject.toml 
+  130  pip3 install requests pytz lh3api xlrd pandas tinydb ask_schools
+  131  ls
+  132  cd .
+  133  cd ..
+  134  python sp_lh3_monitoring_script/activity.py 
+  135  python3 sp_lh3_monitoring_script/activity.py 
+  136  ls
+  137  ls sp_lh3_monitoring_script/
+  138  cd -
+  139  ls
+  140  rm *.xlsx
+  141  ls
+  142  git st
+  143  crontab -e
+  144  git st
+  145  ls
+  146  crontab -l
+  147  ls
+  148  crontab -e
+  149  crontab -l
+  150  ls
+  151  crontab -l
+  152  python3 /root/sp_lh3_monitoring_script/ask.py
+  153  git pull
+  154  python3 /root/sp_lh3_monitoring_script/ask.py
+  155  ls
+  156  ls -al
+  157  timedatectl list-timezones
+  158  sudo timedatectl list-timezones America/New_York
+  159  sudo timedatectl America/New_York
+  160  sudo timedatectl set-timezone America/New_York
+  161  timedatectl
+  162  ls -lh
+  163  ls
+  164  rm 2020-02-03-queues.xlsx 
+  165  ls
+  166  crontab -l
+  167  crontab -e
+  168  ls
+  169  ps -ef | grep crond
+  170  /etc/init.d/crond start
+  171  ls
+  172  crontab -l
+  173  grep CRON /var/log/syslog
+  174  apt-get install postfix
+  175  crontab -e
+  176  git st
+  177  ls
+  178  history > history.txt

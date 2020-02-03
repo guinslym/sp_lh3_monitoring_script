@@ -74,44 +74,57 @@ def insert_to_excel(availabilities, user):
         ws['B'+str(max_row)] = value.get('time')
         ws['C'+str(max_row)] = value.get('hour_floor')
         ws['D'+str(max_row)] = value.get('operator')
-        ws['E'+str(max_row)] = value.get('userShow')
+
+        if user.get('status') == 'null':
+            ws['E'+str(max_row)] = value.get('user_show')
+            if  value.get('user_show') in  ['dnd', 'away', 'xa']:
+                ws['E'+str(max_row)] = 'unavailable-'+ value.get('user_show')
+            else:
+                ws['E'+str(max_row)] = 'available'
+        else:
+            ws['E'+str(max_row)] = user.get('status')
+
+        user_show_value = value.get('user_show') 
+        if user_show_value == 'chat':
+            user_show_value = 'available'
+
         ws['F'+str(max_row)] = find_school_by_operator_suffix(value.get('operator'))
         if value.get('queue') == 'scholars-portal':
-             ws['G'+str(max_row)] = value.get('status') 
+             ws['G'+str(max_row)] = user_show_value 
         elif value.get('queue') == 'scholars-portal-txt':
-             ws['H'+str(max_row)]  = value.get('status') 
+             ws['H'+str(max_row)]  = user_show_value 
         elif value.get('queue') == 'clavardez':
-             ws['I'+str(max_row)] = value.get('status') 
+             ws['I'+str(max_row)] = user_show_value 
         elif value.get('queue') == 'practice-webinars':
-            ws['J'+ str(max_row)] = value.get('status')
+            ws['J'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'practice-webinars-fr':
-            ws['K'+ str(max_row)] = value.get('status')
+            ws['K'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'toronto-mississauga':
-            ws['L'+ str(max_row)] = value.get('status')
+            ws['L'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'toronto-scarborough':
-            ws['M'+ str(max_row)] = value.get('status')
+            ws['M'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'toronto-st-george':
-            ws['N'+ str(max_row)] = value.get('status')
+            ws['N'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'brock':
-            ws['O'+ str(max_row)] = value.get('status')
+            ws['O'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'carleton':
-            ws['P'+ str(max_row)] = value.get('status')
+            ws['P'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'carleton-txt':
-            ws['Q'+ str(max_row)] = value.get('status')
+            ws['Q'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'laurentian':
-            ws['R'+ str(max_row)] = value.get('status')
+            ws['R'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'laurentian-fr':
-            ws['S'+ str(max_row)] = value.get('status')
+            ws['S'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'otech':
-            ws['T'+ str(max_row)] = value.get('status')
+            ws['T'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'queens':
-            ws['U'+ str(max_row)] = value.get('status')
+            ws['U'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'western':
-            ws['V'+ str(max_row)] = value.get('status')
+            ws['V'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'western-txt':
-            ws['W'+ str(max_row)] = value.get('status')
+            ws['W'+ str(max_row)] = user_show_value
         elif value.get('queue') == 'western-proactive':
-            ws['X'+ str(max_row)] = value.get('status')
+            ws['X'+ str(max_row)] = user_show_value
         else:
             pass
     filename = get_filename()
@@ -133,14 +146,14 @@ def find_assignements(assignments, user):
             value = {
                 'queue': queue,
                 'operator': user.get('name'),
-                'userShow': userShow,
-                'status': user.get('show'),
+                'user_show': user.get('show'),
+                'status': user.get('status'),
                 'date': str(loc_dt.strftime(fmt_date)),
                 'time':str(loc_dt.strftime(fmt_hour)), 
                 'hour_floor': str(loc_dt.strftime(fmt_hour))[0:2],
                 'hour': str(loc_dt.strftime(fmt_hour))
             }
-            #print(value)
+            print(value)
             availabilities.append(value)
     return [staffing, availabilities]
 
@@ -150,14 +163,16 @@ def webclient_activity():
     num_users = 0
     for user in users.get_list():
         if user.get('name') == 'guinsly_sp':
-            print(user)
-        if user['show'] != u'chat' and user['show'] != u'available':
+            #print(user) #breakpoint()
+            pass
+        if user['show'] == 'unavailable':
             continue
 
         # Is that user staffing any queue?
         assignments = users.one(user['id']).all('assignments').get_list()
         #print(assignments)
         result = find_assignements(assignments, user)
+        
         staffing = result[0]
         availabilities = result[1]
 

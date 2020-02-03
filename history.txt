@@ -1,0 +1,79 @@
+    1  python -V
+    2  sudo apt install python3
+    3  apt install python3-pip
+    4  pip -V
+    5  pip
+    6  pip3
+    7  pip3 install poetry
+    8  apt-get install -y python3-testresources
+    9  pip3 install poetry
+   10  apt install git-all
+   11  ls
+   12  pip3 install openpyxl
+   13  apt install vim tree
+   14  ls
+   15  git
+   16  git clone git@github.com:guinslym/sp_lh3_monitoring_script.git
+   17  ls  ~/.ssh
+   18  ls
+   19  mv github_rsa /.ssh
+   20  ls
+   21  ls /.ssh
+   22  rm /.ssh
+   23  ls
+   24  ls  ~/.ssh
+   25  ls
+   26  cp github_rsa ~/.ssh
+   27  ls ~/.ssh
+   28  git clone git@github.com:guinslym/sp_lh3_monitoring_script.git
+   29  ssh-keygen -t rsa -b 4096 -C "guinslym@gmail.com"
+   30  ls
+   31  mv *rsa ~/.ssh
+   32  mv lino* ~/.ssh
+   33  ls
+   34  cd ls
+   35  cd ~/.ssh
+   36  ls
+   37  ceval "$(ssh-agent -s)"
+   38  eval "$(ssh-agent -s)"
+   39  ssh-add -K ~/.ssh/github_rsa 
+   40  ssh-add -K github_rsa 
+   41  pbcopy
+   42  apt install pbcopy
+   43  ls
+   44  cat linode_github_rsa.pub 
+   45  cd -
+   46  git clone git@github.com:guinslym/sp_lh3_monitoring_script.git
+   47  poetry
+   48  ssh-add -K
+   49  cd -
+   50  ssh-add -k github_rsa 
+   51  ssh-add -k linode_github_rsa
+   52  cd -
+   53  git clone git@github.com:guinslym/sp_lh3_monitoring_script.git
+   54  ls
+   55  cd sp_lh3_monitoring_script/
+   56  ls
+   57  history > history.txt
+   58  ls
+   59  git add .
+   60  git commit -am 'history'
+   61  git config --global user.email "guinslym@gmail.com"
+   62  git config --global user.name "Guinsly Mondesir"
+   63  git confi
+   64  git config
+   65  ls
+   66  poetry install
+   67  apt-get install python3-venv
+   68  tree .
+   69  poetry install .
+   70  poetry install 
+   71  cd ..
+   72  mkdir ~/.lh3
+   73  ls
+   74  mv config ~/.lh3/
+   75  mv credentials ~/.lh3/
+   76  ls
+   77  cd sp_lh3_monitoring_script/
+   78  ls
+   79  history > history.txt

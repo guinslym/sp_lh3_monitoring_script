@@ -21,7 +21,10 @@ end_url =  "/chat.ca.libraryh3lp.com/text"
 
 def get_filename():
     loc_dt = eastern.localize(datetime.now())
-    filename = str(loc_dt.strftime(fmt_date)) + '-queues.xlsx'
+    if os.environ['environment'] == 'prod':
+        filename = "/root/sp_lh3_monitoring_script/" +str(loc_dt.strftime(fmt_date)) +'-queues.xlsx'
+    else:
+        filename = str(loc_dt.strftime(fmt_date)) +'-queues.xlsx'
     return filename
 
 def try_open_file():
@@ -81,7 +84,10 @@ def prepare_workbook():
     ws['E1'] = 'scholars-portal-txt'
     ws['F1'] = 'clavardez'
     loc_dt = eastern.localize(datetime.now())
-    wb.save(str(loc_dt.strftime(fmt_date)) + '-queues.xlsx')
+    if os.environ['environment'] == 'prod':
+        wb.save("/root/sp_lh3_monitoring_script/" +str(loc_dt.strftime(fmt_date))+ '-queues.xlsx')
+    else:
+        wb.save(str(loc_dt.strftime(fmt_date))+ '-queues.xlsx')
     return wb
 
 def is_hour_between(start, end, now):

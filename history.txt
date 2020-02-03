@@ -176,3 +176,33 @@
   176  git st
   177  ls
   178  history > history.txt
+  179  git st
+  180  git add .
+  181  git commit -am 'history'
+  182  git push -u origin master
+  183  ls
+  184  grep CRON /var/log/syslog
+  185  ls
+  186  touch out.txt
+  187  crontab -e
+  188  ls
+  189  cat out.txt 
+  190  grep CRON /var/log/syslog
+  191  cat /root/sp_lh3_monitoring_script/out.txt
+  192  which python
+  193  python
+  194  apt install python3
+  195  vim ~/.bashrc
+  196  source ~/.bashrc
+  197  which python
+  198  python
+  199  python --version
+  200  which python
+  201  whereis python
+  202  type -a python
+  203  type -a python3
+  204  l
+  205  head ask.py 
+  206  head activity.py 
+  207  ls
+  208  history > history.txt 

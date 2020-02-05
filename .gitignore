@@ -105,3 +105,4 @@ schedule_outp*
 *.egg-info
 .DS_Store
 .vscode/
+try.py

@@ -9,7 +9,6 @@ import os
 
 from openpyxl import Workbook, load_workbook
 
-
 fmt_date = '%Y-%m-%d'
 fmt_hour = '%H:%M:%S'
 fmt_hour_round = '%H.%M'
